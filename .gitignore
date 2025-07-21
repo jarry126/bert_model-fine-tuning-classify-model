@@ -1,0 +1,17 @@
+# Python 缓存
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# 模型和大文件
+model/
+*.pt
+*.bin
+*.ckpt
+
+# 临时文件
+*.log
+.DS_Store
