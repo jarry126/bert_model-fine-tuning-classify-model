@@ -14,7 +14,9 @@ class Model(torch.nn.Module):
     def __init__(self):
         super().__init__()
         #设计全连接网络，实现二分类任务
-        self.fc = torch.nn.Linear(768,2)
+        # self.fc = torch.nn.Linear(768,2)
+        #设计全连接网络，实现六分类任务
+        self.fc = torch.nn.Linear(768,6)
     #使用模型处理数据（执行前向计算）
     def forward(self,input_ids,attention_mask,token_type_ids):
         #冻结Bert模型的参数，让其不参与训练

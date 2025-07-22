@@ -5,7 +5,8 @@ class MyDataset(Dataset):
     #初始化数据集
     def __init__(self,split):
         #从磁盘加载数据
-        self.dataset = load_from_disk(r"/Users/liushanshan/my-project/ai-python/聚客ai第五期/L2/class5/data/ChnSentiCorp")
+        # self.dataset = load_from_disk(r"/Users/liushanshan/my-project/ai-python/聚客ai第五期/L2/class5/data/ChnSentiCorp")
+        self.dataset = load_from_disk(r"/Users/liushanshan/my-project/bert_model-fine-tuning-classify-model/data/dair-ai_emotion")
         if split == "train":
             self.dataset = self.dataset["train"]
         elif split == "test":
@@ -14,7 +15,7 @@ class MyDataset(Dataset):
             self.dataset = self.dataset["validation"]
         else:
             print("数据名错误！")
-        print(f"self.dataset的数据为:{self.dataset}")
+        print(f"split为{split}的self.dataset的数据为:{self.dataset}")
 
     #返回数据集长度
     def __len__(self):

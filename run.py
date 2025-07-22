@@ -1,3 +1,5 @@
+#模型使用接口（主观评估）
+
 import torch
 from net import Model
 from transformers import BertTokenizer
@@ -6,9 +8,9 @@ from transformers import BertTokenizer
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 #加载字典和分词器
-token = BertTokenizer.from_pretrained(r"D:\jukeai\demo_05\model\bert-base-chinese\models--bert-base-chinese\snapshots\c30a6ed22ab4564dc1e3b2ecbf6e766b0611a33f")
+token = BertTokenizer.from_pretrained(r"/Users/liushanshan/my-project/bert_model-fine-tuning-classify-model/model/bert-base-chinese/models--bert-base-chinese/snapshots/c30a6ed22ab4564dc1e3b2ecbf6e766b0611a33f")
 model = Model().to(DEVICE)
-names = ["负向评价","正向评价"]
+names = ["悲伤","喜悦","爱","愤怒","恐惧","惊讶"]
 
 #将传入的字符串进行编码
 def collate_fn(data):
@@ -34,7 +36,7 @@ def collate_fn(data):
 
 def test():
     #加载模型训练参数
-    model.load_state_dict(torch.load("params/best_bert.pth"))
+    model.load_state_dict(torch.load("params/two_classify_pth/best_bert.pth"))
     #开启测试模型
     model.eval()
 
@@ -54,4 +56,3 @@ def test():
 
 if __name__ == '__main__':
     test()
-

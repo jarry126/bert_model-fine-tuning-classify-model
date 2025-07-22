@@ -127,9 +127,9 @@ if __name__ == '__main__':
             #根据验证准确率保存最优参数
             if val_acc > best_val_acc:
                 best_val_acc = val_acc
-                torch.save(model.state_dict(),"params/best_bert.pth")
+                torch.save(model.state_dict(), "params/two_classify_pth/best_bert.pth")
                 print(f"EPOCH:{epoch}:保存最优参数：acc{best_val_acc}")
         #保存最后一轮参数
-        torch.save(model.state_dict(), "params/last_bert.pth")
+        torch.save(model.state_dict(), "params/two_classify_pth/last_bert.pth")
         print(f"EPOCH:{epoch}:最后一轮参数保存成功！")
 
