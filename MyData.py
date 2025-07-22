@@ -5,7 +5,6 @@ class MyDataset(Dataset):
     #初始化数据集
     def __init__(self,split):
         #从磁盘加载数据
-        # self.dataset = load_from_disk(r"/Users/liushanshan/my-project/ai-python/聚客ai第五期/L2/class5/data/ChnSentiCorp")
         self.dataset = load_from_disk(r"/Users/liushanshan/my-project/ai-python/聚客ai第五期/L2/class5/data/ChnSentiCorp")
         if split == "train":
             self.dataset = self.dataset["train"]

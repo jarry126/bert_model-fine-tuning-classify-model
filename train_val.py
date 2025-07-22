@@ -10,7 +10,6 @@ from torch.optim import AdamW
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 #定义训练的轮次(将整个数据集训练完一次为一轮)
 EPOCH = 30000
-# EPOCH = 50
 
 #加载字典和分词器
 token = BertTokenizer.from_pretrained(r"/Users/liushanshan/my-project/ai-python/聚客ai第五期/L2/model/bert-base-chinese/models--bert-base-chinese/snapshots/c30a6ed22ab4564dc1e3b2ecbf6e766b0611a33f")
@@ -37,64 +36,6 @@ def collate_fn(data):
     token_type_ids = data["token_type_ids"]
     label = torch.LongTensor(label)
     return input_ids,attention_mask,token_type_ids,label
-
-train_data = [
-    # 非常负面
-    ("这个产品太糟糕了，简直就是浪费钱", 0),
-    ("服务态度恶劣，体验非常差", 0),
-    ("简直恶心透顶", 0),
-    ("再也不会买了", 0),
-    # 负面
-    ("等了很久才发货，不太满意", 1),
-    ("不太行", 1),
-    ("快递有点慢", 1),
-    ("商品有点小问题", 1),
-    # 中性
-    ("整体还行吧，没有特别出色也没有大问题", 2),
-    ("一般般，没有太多惊喜", 2),
-    ("不好不坏", 2),
-    ("感觉平平淡淡", 2),
-    # 正面
-    ("商品质量不错，快递也很快", 3),
-    ("用起来挺舒服的，值得推荐", 3),
-    ("物有所值", 3),
-    ("体验不错", 3),
-    # 非常正面
-    ("超出预期，简直太棒了！", 4),
-    ("完全爱上这个产品了，强烈安利！", 4),
-    ("真的很不错", 4),
-    ("体验非常惊艳", 4)
-]
-
-
-val_data = [
-    # 非常负面（0）
-    ("简直是灾难，不推荐购买", 0),
-    ("糟糕到无以复加", 0),
-    ("非常后悔购买，体验极差", 0),
-
-    # 负面（1）
-    ("使用中遇到不少小问题", 1),
-    ("客服态度不太友好", 1),
-    ("发票迟迟未到", 1),
-
-    # 中性（2）
-    ("感觉还可以，但没有特别惊艳", 2),
-    ("中规中矩的一次购物", 2),
-    ("使用了一段时间，目前没有问题", 2),
-
-    # 正面（3）
-    ("功能挺多，基本满足需求", 3),
-    ("包装很细致，整体体验不错", 3),
-    ("第一次购买这个品牌，感觉还行", 3),
-
-    # 非常正面（4）
-    ("爱了爱了，真的超棒！", 4),
-    ("五星好评，值得推荐", 4),
-    ("质量好服务也好，以后还会再来", 4)
-]
-
-
 
 #创建数据集
 train_dataset = MyDataset("train")
