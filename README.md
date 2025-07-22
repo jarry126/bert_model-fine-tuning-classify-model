@@ -1,5 +1,5 @@
 # bert_model-fine-tuning-classify-model
-基于 [BERT](https://huggingface.co/bert-base-chinese) 的中文文本分类项目，旨在通过微调（fine-tuning）`bert-base-chinese` 模型，实现一个 **情感分析模型**。
+基于 [BERT](https://huggingface.co/bert-base-chinese) 的中文文本分类项目，旨在通过增量微调（fine-tuning）`bert-base-chinese` 模型，实现一个 **情感分析模型**。
 
 ---
 
@@ -23,7 +23,7 @@
 - six_classify_pth是微调好的六分类模型。使用的数据集为：/Users/liushanshan/my-project/bert_model-fine-tuning-classify-model/data/dair-ai_emotion
 
 ## 微调模型说明
-- 加载本地 `bert-base-chinese` 模型，需要先从huggingface上下载。（使用其他的bert模型也可）
+- 加载本地 `bert-base-chinese` 模型，也可以从huggingface上下载
 
 ## 🚀 核心功能
 - 构建并训练一个多分类神经网络模型
