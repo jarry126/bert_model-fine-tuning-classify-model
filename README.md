@@ -1,6 +1,6 @@
 # bert_model-fine-tuning-classify-model
-
 基于 [BERT](https://huggingface.co/bert-base-chinese) 的中文文本分类项目，旨在通过微调（fine-tuning）`bert-base-chinese` 模型，实现一个 **情感分析模型**。
+
 ---
 
 ## 📌 项目简介
