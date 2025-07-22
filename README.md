@@ -22,8 +22,10 @@
 - params中的two_classify_pth是微调好的二分类模型。使用的数据集为：/Users/liushanshan/my-project/bert_model-fine-tuning-classify-model/data/ChnSentiCorp
 - six_classify_pth是微调好的六分类模型。使用的数据集为：/Users/liushanshan/my-project/bert_model-fine-tuning-classify-model/data/dair-ai_emotion
 
+## 微调模型说明
+- 加载本地 `bert-base-chinese` 模型，需要先从huggingface上下载。（使用其他的bert模型也可）
+
 ## 🚀 核心功能
-- 加载本地 `bert-base-chinese` 模型
 - 构建并训练一个多分类神经网络模型
 - 文本输入，输出分类标签。如果是二分类模型，输出0，1；如果是六分类模型，输出0，1，2，3，4，5
 - 模型保存与加载功能
