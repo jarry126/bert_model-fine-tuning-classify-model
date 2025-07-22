@@ -34,6 +34,9 @@
 
 ### 1. 克隆项目
 
+#### ⚠️ 注意事项
+- 注意克隆前请下载 git 和 git lfs
+
 ```bash
 git clone https://github.com/jarry126/bert_model-fine-tuning-classify-model.git
 cd bert_model-fine-tuning-classify-model

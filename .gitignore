@@ -7,10 +7,10 @@ __pycache__/
 .ipynb_checkpoints/
 
 # 模型和大文件
-model/
-*.pt
-*.bin
-*.ckpt
+#model/
+#*.pt
+#*.bin
+#*.ckpt
 
 # 临时文件
 *.log
