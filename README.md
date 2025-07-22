@@ -37,6 +37,8 @@
 #### ⚠️ 注意事项
 - 注意克隆前请下载 git 和 git lfs
 
+- 6分类任务训练到：47 epoch；验证集：loss:1.4123879671096802,acc:21.875 ，还需要继续训练下去，现在的成果为：![img.png](img.png)，可以看到有1个是错误的，其他都还行
+
 ```bash
 git clone https://github.com/jarry126/bert_model-fine-tuning-classify-model.git
 cd bert_model-fine-tuning-classify-model
