@@ -23,7 +23,7 @@
 - six_classify_pth是微调好的六分类模型。使用的数据集为：/Users/liushanshan/my-project/bert_model-fine-tuning-classify-model/data/dair-ai_emotion
 
 ## 微调模型说明
-- 加载本地 `bert-base-chinese` 模型，也可以从huggingface上下载
+- 加载本地 `bert-base-chinese` 模型，位置：models/bert-base-chinese/models--bert-base-chinese/snapshots/c30a6ed22ab4564dc1e3b2ecbf6e766b0611a33f
 
 ## 🚀 核心功能
 - 构建并训练一个多分类神经网络模型
